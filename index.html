@@ -1,0 +1,29 @@
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Search Movie</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+</head>
+<div id="app">
+    <div class="container">     
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4" style="margin-top: 7%;">        
+                <input v-model="query" placeholder="Movie" class="form-control"/> 
+                <button v-on:click="search" class="btn btn-info btn-block">Search for a movie</button>
+                <div id="result" v-if="result">
+                        <h1>{{result.Title}} </h1>
+                        <h2>IMDB : {{result.imdbRating}}</h2>
+                        <img v-bind:src=result.Poster>
+                        <p><strong>Actors : {{result.Actors}}</strong></p>
+                     <p><strong>Plot : {{result.Plot}}</strong></p>
+                </div>
+        </div>
+        <div class="col-sm-4"></div>    
+    </div>
+</div>
+<script src="app.js"></script>
+
+    
